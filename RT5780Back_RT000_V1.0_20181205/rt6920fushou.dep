@@ -1,0 +1,29 @@
+;	STMicroelectronics dependencies file
+
+[Version]
+Keyword=ST7Project
+Number=1.3
+
+[Root.Source Files.timer.c.Config.0]
+ExternDep= timer.c "C:\Program Files (x86)\COSMIC\CXSTM8_32K\Hstm8\mods0.h"  timer.h
+
+[Root.Source Files.input.c.Config.0]
+ExternDep= input.c "C:\Program Files (x86)\COSMIC\CXSTM8_32K\Hstm8\mods0.h"  STM8S103k.h MotorCtrl.h Input.h
+
+[Root.Source Files.kneadmotor.c.Config.0]
+ExternDep= kneadmotor.c  "C:\Program Files (x86)\COSMIC\CXSTM8_32K\Hstm8\mods0.h" STM8S103k.h Input.h  KneadMotor.h
+
+[Root.Source Files.knockmotor.c.Config.0]
+ExternDep= knockmotor.c  "C:\Program Files (x86)\COSMIC\CXSTM8_32K\Hstm8\mods0.h" STM8S103k.h  KnockMotor.h
+
+[Root.Source Files.walkmotor.c.Config.0]
+ExternDep= walkmotor.c  "C:\Program Files (x86)\COSMIC\CXSTM8_32K\Hstm8\mods0.h" STM8S103k.h  WalkMotor.h MotorCtrl.h Input.h
+
+[Root.Source Files.rt5800back.c.Config.0]
+ExternDep= rt5800back.c  "C:\Program Files (x86)\COSMIC\CXSTM8_32K\Hstm8\mods0.h" STM8S103k.h  WalkMotor.h KneadMotor.h KnockMotor.h MotorCtrl.h Input.h timer.h
+
+[Root.Source Files.motorctrl.c.Config.0]
+ExternDep= motorctrl.c  "C:\Program Files (x86)\COSMIC\CXSTM8_32K\Hstm8\mods0.h" STM8S103k.h  KnockMotor.h KneadMotor.h WalkMotor.h MotorCtrl.h Input.h Timer.h
+
+[Root.Source Files.stm8_interrupt_vector.c.Config.0]
+ExternDep= stm8_interrupt_vector.c  "C:\Program Files (x86)\COSMIC\CXSTM8_32K\Hstm8\mods0.h" STM8S103k.h Input.h  WalkMotor.h KneadMotor.h MotorCtrl.h Timer.h

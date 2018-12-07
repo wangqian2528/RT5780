@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>2</fileVersion>
+    <fileChecksum>2750473795</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\Debug\Obj\RT5800Back.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm8_interrupt_vector.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\Input.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\RT5780.pbd</file>
+            <file>$PROJ_DIR$\Debug\Obj\Input.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\MotorCtrl.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\MotorCtrl.__cstat.et</file>
+            <file>$PROJ_DIR$\Timer.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\KneadMotor.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\WalkMotor.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm8_interrupt_vector.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\KnockMotor.pbi</file>
+            <file>$PROJ_DIR$\stm8_interrupt_vector.c</file>
+            <file>$PROJ_DIR$\Debug\Exe\RT5780.out</file>
+            <file>$PROJ_DIR$\Debug\Obj\KnockMotor.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\RT5800Back.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\Input.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\MotorCtrl.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\Timer.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\KneadMotor.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\KneadMotor.__cstat.et</file>
+            <file>$PROJ_DIR$\STM8S103k.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\Timer.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\KnockMotor.o</file>
+            <file>$PROJ_DIR$\KneadMotor.h</file>
+            <file>$PROJ_DIR$\MotorCtrl.c</file>
+            <file>$PROJ_DIR$\Timer.c</file>
+            <file>$PROJ_DIR$\Debug\List\RT5780.map</file>
+            <file>$PROJ_DIR$\Input.c</file>
+            <file>$PROJ_DIR$\KneadMotor.c</file>
+            <file>$PROJ_DIR$\KnockMotor.c</file>
+            <file>$PROJ_DIR$\RT5800Back.c</file>
+            <file>$PROJ_DIR$\stm8s_interruput.c</file>
+            <file>$PROJ_DIR$\MotorCtrl.h</file>
+            <file>$TOOLKIT_DIR$\config\lnkstm8s103k3.icf</file>
+            <file>$PROJ_DIR$\Debug\Obj\Timer.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm8s_interruput.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm8s_interruput.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm8s_interruput.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\WalkMotor.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Exe\RT5780.s19</file>
+            <file>$PROJ_DIR$\Debug\Obj\RT5800Back.pbi</file>
+            <file>$PROJ_DIR$\WalkMotor.h</file>
+            <file>$PROJ_DIR$\KnockMotor.h</file>
+            <file>$TOOLKIT_DIR$\lib\dbgstm8mmd.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\WalkMotor.pbi</file>
+            <file>$PROJ_DIR$\Input.h</file>
+            <file>$TOOLKIT_DIR$\lib\dlstm8mmn.a</file>
+            <file>$PROJ_DIR$\WalkMotor.c</file>
+        </outputs>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 13 27</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\stm8_interrupt_vector.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 10</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 1</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 21 46 42 24 33 7</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 33 42 46 24 21 7</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\RT5780.out</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 27</file>
+                </tool>
+                <tool>
+                    <name>OBJCOPY</name>
+                    <file> 40</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 34 2 8 23 17 15 37 18 9 47 44</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\MotorCtrl.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 17</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 5</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 6</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 21 43 24 42 33 46 7</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 33 24 7 43 42 46 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Timer.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 18</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 22</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 35</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 7</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 7</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Input.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 2</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 16</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 4</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 21 33 46</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 33 21 46</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\KneadMotor.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 8</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 19</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 20</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 21 46 24</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 24 46 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\KnockMotor.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 23</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 11</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 14</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 21 43</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 21 43</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\RT5800Back.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 15</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 41</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 0</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 21 42 24 43 33 46 7</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 33 24 7 42 43 46 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\stm8s_interruput.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 37</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 38</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 36</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 21 46 42 24 33 7</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 33 42 46 24 7 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\WalkMotor.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 9</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 45</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 39</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 21 42 33 46</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 33 42 46 21</file>
+                </tool>
+            </inputs>
+        </file>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>
