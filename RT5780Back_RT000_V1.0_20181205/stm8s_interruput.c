@@ -19,7 +19,7 @@ extern volatile unsigned int nCurWalkLocate;
 extern _Bool b485SendFlag;//modify by dyl  20170424
 _Bool bSendFinishFlag = 0;//modify for new 485send  dyl 20170426
 
-#pragma vector=0x04
+#pragma vector=0x06
 __interrupt void EXTI1_PORTB_Interrupt(void)
 {
     if(WalkMotor_GetDirection() != WALK_MOTOR_GO_UP)
@@ -47,7 +47,7 @@ __interrupt void EXTI1_PORTB_Interrupt(void)
     return;
 }
 
-#pragma vector=0x11
+#pragma vector=0x13
 __interrupt void UART_TX_Interrupt(void)
 {
     //unsigned int i;
@@ -71,7 +71,7 @@ __interrupt void UART_TX_Interrupt(void)
     return;
 }
 
-#pragma vector=0x12
+#pragma vector=0x14
 __interrupt void UART_RX_Interrupt(void)
 {
     //RXNE, ¶ÁÊý¾Ý¼Ä´æÆ÷·Ç¿Õ
@@ -120,7 +120,7 @@ __interrupt void UART_RX_Interrupt(void)
     return;
 }
 
-#pragma vector=0x17
+#pragma vector=0x19
 __interrupt void TIM4_Interrupt(void)
 {
     static unsigned char by_Time5ms = 0;
