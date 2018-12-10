@@ -8,14 +8,14 @@
 
 typedef struct
 {
-	unsigned BIT0:1;
-	unsigned BIT1:1;
-	unsigned BIT2:1;
-	unsigned BIT3:1;
-	unsigned BIT4:1;
-	unsigned BIT5:1;
-	unsigned BIT6:1;
-	unsigned BIT7:1;
+    unsigned BIT0:1;
+    unsigned BIT1:1;
+    unsigned BIT2:1;
+    unsigned BIT3:1;
+    unsigned BIT4:1;
+    unsigned BIT5:1;
+    unsigned BIT6:1;
+    unsigned BIT7:1;
 }ST_BITS;
 
 typedef struct
@@ -46,18 +46,18 @@ typedef struct
 #define MAX_SEND_COUNT			14
 #define MAX_RECEIVE_COUNT		25
 
-#define bMax485De	      PD.ODR.BIT7
+#define bMax485De       PD.ODR.BIT7
 
 #define bWalkEnable     PA.ODR.BIT3
 #define bWalkReset      PE.ODR.BIT5
 #define bWalkPhase      PF.ODR.BIT4
-#define bWalkDecay			PB.ODR.BIT7	
-#define bWalkFault  		PB.IDR.BIT6
+#define bWalkDecay      PB.ODR.BIT7	
+#define bWalkFault      PB.IDR.BIT6
 
 #define bKneadReset     PD.ODR.BIT0
 #define bKneadPhase     PC.ODR.BIT5
-#define bKneadDecay			PC.ODR.BIT6	
-#define bKneadFault  		PC.IDR.BIT7
+#define bKneadDecay     PC.ODR.BIT6	
+#define bKneadFault     PC.IDR.BIT7
 
 #define bKnockReset     PD.ODR.BIT2
 #define bKnockFault     PD.IDR.BIT3

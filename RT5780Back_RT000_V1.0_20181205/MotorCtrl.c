@@ -19,11 +19,11 @@ _Bool bHasKneadWidthMinPulse,bHasKneadWidthMedPulse,bHasKneadWidthMaxPulse;
 void KnockMotorControl(unsigned char nKnockMotorState,unsigned char nKnockingMotorRunTime,unsigned char nKnockingMotorStopTime)
 {
     static _Bool bKnockMotorPowerFlag;
-		//syx 20160424
+    //syx 20160424
     //敲打电机音乐互动（高频）
     //if((nBackMainRunMode == BACK_MAIN_MODE_MANUAL) &&
     //    (nBackSubRunMode == BACK_SUB_MODE_MUSIC) &&
-		//		(nKnockMotorState == KNOCK_RUN_MUSIC))
+    //    (nKnockMotorState == KNOCK_RUN_MUSIC))
     //{
     //    nMusicKnockPWM = AD_KNOCK_PWM(nAvrADResult0) ;
     //    KnockMotor_Set_Pwm_Data(nMusicKnockPWM);
@@ -193,8 +193,8 @@ void KneadMotorControl(unsigned char nKneadMotorState,unsigned char nKneadMotorC
 {
     unsigned int speed;
     unsigned int step;
-		static unsigned char nFinalKneadMotorState = STATE_IDLE; //syx 20160424
-		static unsigned char nCurKneadWidth = KNEAD_WIDTH_UNKNOWN; //syx 20160424
+    static unsigned char nFinalKneadMotorState = STATE_IDLE; //syx 20160424
+    static unsigned char nCurKneadWidth = KNEAD_WIDTH_UNKNOWN; //syx 20160424
     if(bKneadMotorInProcess == TRUE)
     {
         switch(nKneadMotorState)
@@ -545,7 +545,7 @@ unsigned char WalkMotorControl(unsigned char nWalkMotorLocateMethod,unsigned sho
         case WALK_LOCATE_TOP:  //运行到上端行程
 //#ifdef TOP_BY_LIMIT
             nFinalWalkMotorLocate = by_TopPosition ;
-						/*
+    /*
 #else
             if(nBackMainRunMode == BACK_MAIN_MODE_AUTO)
             {

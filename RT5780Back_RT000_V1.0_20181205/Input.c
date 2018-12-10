@@ -20,13 +20,13 @@ volatile unsigned int nCurWalkLocate;
 void Input_SetWalkMotorPosition(unsigned int locate)
 {
     //nCurWalkLocate = (unsigned int)(locate*2);
-		nCurWalkLocate = locate;
+    nCurWalkLocate = locate;
 }
 
 unsigned int Input_GetWalkMotorPosition(void)
 {
     //return(nCurWalkLocate/2);
-		return nCurWalkLocate;
+    return nCurWalkLocate;
 }
 
 void Input_5ms_Int(void)
@@ -57,9 +57,8 @@ void Input_Low(INPUT_ST* p)
 
 void Input_Proce(void)
 {
-		if(!b5msFlag) return;		
+    if(!b5msFlag) return;		
     b5msFlag = 0;
-	
     if(bKneadMinBit == 0)
     {
         by_KneadPosition = KNEAD_WIDTH_MIN;    
@@ -81,7 +80,6 @@ void Input_Proce(void)
         bKneadMid = 1; 
         bKneadMax = 0;
     }
-
     bWalkUpSW ? Input_High(&st_WalkUp):Input_Low(&st_WalkUp);
     bWalkDownSW ? Input_High(&st_WalkDown):Input_Low(&st_WalkDown);
 }

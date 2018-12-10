@@ -1,13 +1,13 @@
 #ifndef __KNOCK_MOTOR_H__
 #define __KNOCK_MOTOR_H__
 
-#define KNOCK_SPEED0_PWM 	0       //0%
-#define KNOCK_SPEED1_PWM 	50//300
-#define KNOCK_SPEED2_PWM 	60//350
-#define KNOCK_SPEED3_PWM 	70//400
-#define KNOCK_SPEED4_PWM 	80//450
-#define KNOCK_SPEED5_PWM 	90//500
-#define KNOCK_SPEED6_PWM 	101//550
+#define KNOCK_SPEED0_PWM    0//0%
+#define KNOCK_SPEED1_PWM    50//300
+#define KNOCK_SPEED2_PWM    60//350
+#define KNOCK_SPEED3_PWM    70//400
+#define KNOCK_SPEED4_PWM    80//450
+#define KNOCK_SPEED5_PWM    90//500
+#define KNOCK_SPEED6_PWM    101//550
 
 #define KNOCK_SET_VOLTAGE       250000 
 

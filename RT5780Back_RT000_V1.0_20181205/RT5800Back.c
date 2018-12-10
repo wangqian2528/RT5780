@@ -197,238 +197,210 @@ unsigned char nReceiveClass = 0xAB;
 //-----------------------------------------------------------------------------
 void CommProcess(void)
 {
-	unsigned char chk_sum;
-	//unsigned char j;
-	
-	  unsigned int i = 0;
-		if(bReceivePacketOk == TRUE)
-	  {
-		    //bMasterSendPacket = FALSE;  //syx 20160516				
-		    bReceivePacketOk = FALSE;	
-				//_asm("sim");
-				nReceiveClass = nRxBuf[1];
-			if(nReceiveClass == 0xAB)
-		  {
-		 			chk_sum=0;
-					for ( i=1;i<3+nRxBuf[2];i++)
-					{
-						 chk_sum+=nRxBuf[i];
-					}
-					chk_sum=~chk_sum;
-					chk_sum&=0x7f;
-					
-				if(chk_sum==nRxBuf[3+nRxBuf[2]])
-				{
-					  bMasterSendPacket = TRUE;//modify by dyl  20170426
-					if(nRxBuf[22]==1)//收到主板发送的标志位
-					{
-						nKnockMotorControlParam1 = nRxBuf[3];
-						nKnockMotorControlParam2 = nRxBuf[4];
-						nKnockMotorControlParam3 = nRxBuf[5];
-            nKneadMotorControlParam1 = nRxBuf[6];
-            nKneadMotorControlParam2 = nRxBuf[7];
-            nWalkMotorControlParam1 = nRxBuf[8];
-            nWalkMotorControlParam2 = ((unsigned short)nRxBuf[9] << 8) | (unsigned short)nRxBuf[10];
-						
-						//nVoltage = ((unsigned short)nRxBuf[11] << 8) | (unsigned short)nRxBuf[12];
-						
-						bKnockMotorInProcess = nRxBuf[11];
-            bKneadMotorInProcess = nRxBuf[12];
-            bWalkMotorInProcess = nRxBuf[13];
-			      bUpdateLocate = nRxBuf[14];
-            
-						nShoulderPosition = ((unsigned short)nRxBuf[15] << 8) | (unsigned short)nRxBuf[16];
-            
-						nBackMainRunMode = nRxBuf[17];
-            nCurActionStepCounter = nRxBuf[18];
-            nCurKneadKnockSpeed = nRxBuf[19];
-            nCurKnockRunStopCounter = nRxBuf[20];
-            nCurKneadMotorCycles = nRxBuf[21];
-						
-						upload_auto_step=2;//回传给主板，表示收到动作
-					}
-				 else 
-				  {
-				    upload_auto_step=1;//无需更新动作				
-				  }
-						
-			  }
-			}
-				else if(nReceiveClass == 0xAA)
-			  {
-						chk_sum=0;
-					for ( i=1;i<3+nRxBuf[2];i++)
-					{
-						 chk_sum+=nRxBuf[i];
-					 }
-					chk_sum=~chk_sum;
-					chk_sum&=0x7f;
-					
-					if(chk_sum==nRxBuf[3+nRxBuf[2]])
-					{
-					  bMasterSendPacket = TRUE;//modify by dyl  20170426
-						
-						nKnockMotor_ControlParam1 = nRxBuf[3];
-            nKneadMotor_ControlParam1 = nRxBuf[4];
-            nKneadMotor_ControlParam2 = nRxBuf[5];
-            nWalkMotor_ControlParam1 = nRxBuf[6];
-            nWalkMotor_ControlParam2 = ((unsigned short)nRxBuf[7] << 8) | (unsigned short)nRxBuf[8];
-						
-						//nVoltage = ((unsigned short)nRxBuf[9] << 8) | (unsigned short)nRxBuf[10];
-				  }
-			}
-				//RX_Index = 0;
-				//nSendCounter = 0;
-				//_asm("rim");
+    unsigned char chk_sum;
+    //unsigned char j;
+
+    unsigned int i = 0;
+    if(bReceivePacketOk == TRUE)
+    {
+    //bMasterSendPacket = FALSE;  //syx 20160516				
+        bReceivePacketOk = FALSE;	
+        //_asm("sim");
+        nReceiveClass = nRxBuf[1];
+        if(nReceiveClass == 0xAB)
+        {
+            chk_sum=0;
+            for ( i=1;i<3+nRxBuf[2];i++)
+            {
+                chk_sum+=nRxBuf[i];
+            }
+            chk_sum=~chk_sum;
+            chk_sum&=0x7f;
+            if(chk_sum==nRxBuf[3+nRxBuf[2]])
+            {
+                bMasterSendPacket = TRUE;//modify by dyl  20170426
+                if(nRxBuf[22]==1)//收到主板发送的标志位
+                {
+                    nKnockMotorControlParam1 = nRxBuf[3];
+                    nKnockMotorControlParam2 = nRxBuf[4];
+                    nKnockMotorControlParam3 = nRxBuf[5];
+                    nKneadMotorControlParam1 = nRxBuf[6];
+                    nKneadMotorControlParam2 = nRxBuf[7];
+                    nWalkMotorControlParam1 = nRxBuf[8];
+                    nWalkMotorControlParam2 = ((unsigned short)nRxBuf[9] << 8) | (unsigned short)nRxBuf[10];
+                    //nVoltage = ((unsigned short)nRxBuf[11] << 8) | (unsigned short)nRxBuf[12];
+                    bKnockMotorInProcess = nRxBuf[11];
+                    bKneadMotorInProcess = nRxBuf[12];
+                    bWalkMotorInProcess = nRxBuf[13];
+                    bUpdateLocate = nRxBuf[14];
+                    nShoulderPosition = ((unsigned short)nRxBuf[15] << 8) | (unsigned short)nRxBuf[16];
+                    nBackMainRunMode = nRxBuf[17];
+                    nCurActionStepCounter = nRxBuf[18];
+                    nCurKneadKnockSpeed = nRxBuf[19];
+                    nCurKnockRunStopCounter = nRxBuf[20];
+                    nCurKneadMotorCycles = nRxBuf[21];
+                    upload_auto_step=2;//回传给主板，表示收到动作
+                }
+                else 
+                {
+                    upload_auto_step=1;//无需更新动作				
+                }
+            }
+        }
+        else if(nReceiveClass == 0xAA)
+        {
+            chk_sum=0;
+            for ( i=1;i<3+nRxBuf[2];i++)
+            {
+                chk_sum+=nRxBuf[i];
+            }
+            chk_sum=~chk_sum;
+            chk_sum&=0x7f;
+            if(chk_sum==nRxBuf[3+nRxBuf[2]])
+            {
+                bMasterSendPacket = TRUE;//modify by dyl  20170426
+                nKnockMotor_ControlParam1 = nRxBuf[3];
+                nKneadMotor_ControlParam1 = nRxBuf[4];
+                nKneadMotor_ControlParam2 = nRxBuf[5];
+                nWalkMotor_ControlParam1 = nRxBuf[6];
+                nWalkMotor_ControlParam2 = ((unsigned short)nRxBuf[7] << 8) | (unsigned short)nRxBuf[8];
+                //nVoltage = ((unsigned short)nRxBuf[9] << 8) | (unsigned short)nRxBuf[10];
+            }
+        }
+        //RX_Index = 0;
+        //nSendCounter = 0;
+        //_asm("rim");
     }
-		
-			  if(nReceiveClass == 0xAB)
-				{
-						main_GetKneadPosition();
-				    WalkMotorControl(nWalkMotorControlParam1,nWalkMotorControlParam2);
-				    KneadMotorControl(nKneadMotorControlParam1,nKneadMotorControlParam2);
-				    KnockMotorControl(nKnockMotorControlParam1,nKnockMotorControlParam2,nKnockMotorControlParam3);
-						
-			  }
-				else if(nReceiveClass == 0xAA)
-			  {
-						nWalkMotorReturn = WalkMotor_Control(nWalkMotor_ControlParam1,nWalkMotor_ControlParam2);
-						nKneadMotorReturn = KneadMotor_Control(nKneadMotor_ControlParam1,nKneadMotor_ControlParam2);
-						KnockMotor_Set_Pwm_Data(nKnockMotor_ControlParam1);
-						
-				}
-		
-	  if((bMasterSendPacket == TRUE)&&(b485SendFlag == TRUE))//modify by dyl  20170424
-	  {
-		    if(nReceiveClass == 0xAB)
-				{
-				    nSendCount = 0;
-		        nSendTotalCount = 14;//dyl 20170426 //13;//11;
-				
-				    for(i = 0;i < nSendTotalCount;i++)
-				    {
-						    nTxBuf[i] = 0;
-				    }
-				    nTxBuf[0] = 0x55;
-				    nTxBuf[1] = 0xAB;
-				    
-						nTxBuf[2] = 9;//dyl 20170426 //8; //数据包长度
-						nTxBuf[3] = bKnockMotorInProcess;
+    if(nReceiveClass == 0xAB)
+    {
+        main_GetKneadPosition();
+        WalkMotorControl(nWalkMotorControlParam1,nWalkMotorControlParam2);
+        KneadMotorControl(nKneadMotorControlParam1,nKneadMotorControlParam2);
+        KnockMotorControl(nKnockMotorControlParam1,nKnockMotorControlParam2,nKnockMotorControlParam3);
+    }
+    else if(nReceiveClass == 0xAA)
+    {
+        nWalkMotorReturn = WalkMotor_Control(nWalkMotor_ControlParam1,nWalkMotor_ControlParam2);
+        nKneadMotorReturn = KneadMotor_Control(nKneadMotor_ControlParam1,nKneadMotor_ControlParam2);
+        KnockMotor_Set_Pwm_Data(nKnockMotor_ControlParam1);
+    }
+    if((bMasterSendPacket == TRUE)&&(b485SendFlag == TRUE))//modify by dyl  20170424
+    {
+        if(nReceiveClass == 0xAB)
+        {
+            nSendCount = 0;
+            nSendTotalCount = 14;//dyl 20170426 //13;//11;
+            for(i = 0;i < nSendTotalCount;i++)
+            {
+                nTxBuf[i] = 0;
+            }
+            nTxBuf[0] = 0x55;
+            nTxBuf[1] = 0xAB;
+            nTxBuf[2] = 9;//dyl 20170426 //8; //数据包长度
+            nTxBuf[3] = bKnockMotorInProcess;
             nTxBuf[4] = bKneadMotorInProcess;
             nTxBuf[5] = bWalkMotorInProcess;
-						nTxBuf[6] = (nShoulderPosition >> 8);
+            nTxBuf[6] = (nShoulderPosition >> 8);
             nTxBuf[7] = nShoulderPosition;
-						//nTxBuf[8] = nCurActionStepCounter;
+            //nTxBuf[8] = nCurActionStepCounter;
             //nTxBuf[9] = nCurKnockRunStopCounter;
-					  nTxBuf[8] = (nCurWalkLocate >> 8);
+            nTxBuf[8] = (nCurWalkLocate >> 8);
             nTxBuf[9] = nCurWalkLocate;
-						nTxBuf[10] = Input_GetKneadPosition();
-						nTxBuf[11] = upload_auto_step;//dyl 20170426 
-						
-						chk_sum=0;
-						chk_sum +=	nTxBuf[1];
-						chk_sum +=	nTxBuf[2];
-						chk_sum +=	nTxBuf[3];
-						chk_sum +=	nTxBuf[4];
-						chk_sum +=	nTxBuf[5];
-						chk_sum +=	nTxBuf[6];
-						chk_sum +=	nTxBuf[7];
-						chk_sum +=	nTxBuf[8];
-						chk_sum +=	nTxBuf[9];
-						chk_sum +=	nTxBuf[10];
-						chk_sum +=	nTxBuf[11];
-						chk_sum =   ~chk_sum;
-						chk_sum &=   0x7f;
-						nTxBuf[12] = chk_sum;
-											
-						nTxBuf[13] = EOI_AB;
-						bMax485De = TRUE;
-						
-						//i = 200;
+            nTxBuf[10] = Input_GetKneadPosition();
+            nTxBuf[11] = upload_auto_step;//dyl 20170426 
+            chk_sum=0;
+            chk_sum +=	nTxBuf[1];
+            chk_sum +=	nTxBuf[2];
+            chk_sum +=	nTxBuf[3];
+            chk_sum +=	nTxBuf[4];
+            chk_sum +=	nTxBuf[5];
+            chk_sum +=	nTxBuf[6];
+            chk_sum +=	nTxBuf[7];
+            chk_sum +=	nTxBuf[8];
+            chk_sum +=	nTxBuf[9];
+            chk_sum +=	nTxBuf[10];
+            chk_sum +=	nTxBuf[11];
+            chk_sum =   ~chk_sum;
+            chk_sum &=   0x7f;
+            nTxBuf[12] = chk_sum;
+            nTxBuf[13] = EOI_AB;
+            bMax485De = TRUE;
+            //i = 200;
             //while(i--);
-						
-		        while(!(UART1_SR&0x40));//trasmission is not complete;
-		        UART1_DR = nTxBuf[nSendCount];
-		        nSendCount++;
-		        UART1_CR2 |= 0x48;
-			  }
-				else if(nReceiveClass == 0xAA)
-				{
-				    nSendCount = 0;
-		        nSendTotalCount = 7;
-				
-				    for(i = 0;i < nSendTotalCount;i++)
-				    {
-						    nTxBuf[i] = 0;
-				    }
-				    nTxBuf[0] = 0x55;
-				    nTxBuf[1] = 0xAA;
-				    
-						nTxBuf[2] = 2; //数据包长度
-						nTxBuf[3] = nWalkMotorReturn;
+            while(!(UART1_SR&0x40));//trasmission is not complete;
+            UART1_DR = nTxBuf[nSendCount];
+            nSendCount++;
+            UART1_CR2 |= 0x48;
+        }
+        else if(nReceiveClass == 0xAA)
+        {
+            nSendCount = 0;
+            nSendTotalCount = 7;
+            for(i = 0;i < nSendTotalCount;i++)
+            {
+                nTxBuf[i] = 0;
+            }
+            nTxBuf[0] = 0x55;
+            nTxBuf[1] = 0xAA;
+            nTxBuf[2] = 2; //数据包长度
+            nTxBuf[3] = nWalkMotorReturn;
             nTxBuf[4] = nKneadMotorReturn;
-						
-						chk_sum=0;
-						chk_sum +=	nTxBuf[1];
-						chk_sum +=	nTxBuf[2];
-						chk_sum +=	nTxBuf[3];
-						chk_sum +=	nTxBuf[4];
-						chk_sum =   ~chk_sum;
-						chk_sum &=   0x7f;
-						nTxBuf[5] = chk_sum;
-						nTxBuf[6] = EOI_AA;
-						bMax485De = TRUE;
-								
-						//i = 200;
+            chk_sum=0;
+            chk_sum +=	nTxBuf[1];
+            chk_sum +=	nTxBuf[2];
+            chk_sum +=	nTxBuf[3];
+            chk_sum +=	nTxBuf[4];
+            chk_sum =   ~chk_sum;
+            chk_sum &=   0x7f;
+            nTxBuf[5] = chk_sum;
+            nTxBuf[6] = EOI_AA;
+            bMax485De = TRUE;
+            //i = 200;
             //while(i--);
-						
-		        while(!(UART1_SR&0x40));//trasmission is not complete;
-		        UART1_DR = nTxBuf[nSendCount];
-		        nSendCount++;
-		        UART1_CR2 |= 0x48;
-			  }
-		
-				bMasterSendPacket = FALSE;
-				b485SendFlag = FALSE;//modify by dyl  20170424
+            while(!(UART1_SR&0x40));//trasmission is not complete;
+            UART1_DR = nTxBuf[nSendCount];
+            nSendCount++;
+            UART1_CR2 |= 0x48;
+        }
+        bMasterSendPacket = FALSE;
+        b485SendFlag = FALSE;//modify by dyl  20170424
     }
 }
 //-----------------------------------------------------------------------------
 void main()
 {
-	  asm("sim");		/* Disable interrupts */
+    asm("sim");		/* Disable interrupts */
 
-	  CLK_Init();
-	  GPIO_Init();
-	  TIM_Init();
-	  Time1Pwm_Init();
-	  Time2Pwm_Init();
-	  UART_Init();
-	
-	  asm("rim");
+    CLK_Init();
+    GPIO_Init();
+    TIM_Init();
+    Time1Pwm_Init();
+    Time2Pwm_Init();
+    UART_Init();
+    asm("rim");
 
-	  asm("nop");
-	  asm("nop");
-	  asm("nop");
-	  asm("nop");
-	  asm("nop");
+    asm("nop");
+    asm("nop");
+    asm("nop");
+    asm("nop");
+    asm("nop");
 
     bMax485De = FALSE;
-	  bMasterSendPacket = FALSE;
-	
-		bWalkMotorInProcess = FALSE ;
+    bMasterSendPacket = FALSE;
+    bWalkMotorInProcess = FALSE ;
     nWalkMotorControlParam1 = WALK_LOCATE_PARK ;
     nWalkMotorControlParam2 = 0 ;
     bUpdateLocate = TRUE ;     //行走电机坐标更新标志，置位时更新一次坐标
-	  nKneadMotorControlParam1 = KNEAD_STOP ;
-		
-	  while(1)
-	  {
-		    Input_Proce();
-				CommProcess();
-				if(Timer_Counter(C_TIMER_RUN + T_LOOP,1))//work
-			  {
-				    nCurActionStepCounter++ ;  //syx 20160519
+    nKneadMotorControlParam1 = KNEAD_STOP ;
+
+    while(1)
+    {
+        Input_Proce();
+        CommProcess();
+        if(Timer_Counter(C_TIMER_RUN + T_LOOP,1))//work
+        {
+            nCurActionStepCounter++ ;  //syx 20160519
             nCurKnockRunStopCounter++ ;  //syx 20160519
-				}
-	  }
+        }
+    }
 }

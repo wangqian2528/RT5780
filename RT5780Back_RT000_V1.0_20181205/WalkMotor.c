@@ -68,13 +68,13 @@ static void WalkPower_On(void)
     //Power_On();
     // GPIO_PinOutSet(WALK_MOTOR_ENBL_PORT, WALK_MOTOR_ENBL_BIT);
     //WalkMotor_Set_Pwm_Data(WALK_MOTOR_DEFAULT_TOP);
-		bWalkEnable = 1;
+    bWalkEnable = 1;
 }
 static void WalkPower_Off(void)
 {
     //GPIO_PinOutClear(WALK_MOTOR_ENBL_PORT, WALK_MOTOR_ENBL_BIT);
     //WalkMotor_Set_Pwm_Data(0);
-		bWalkEnable = 0;
+    bWalkEnable = 0;
 }
 //unsigned int WalkRelay_Get(void)
 //{
@@ -104,9 +104,9 @@ static void WalkMotor_Up(void)
     //GPIO_PinOutSet(WALK_MOTOR_RESET_PORT, WALK_MOTOR_RESET_BIT);
     //GPIO_PinOutClear(WALK_MOTOR_PHASE_PORT, WALK_MOTOR_PHASE_BIT);
     //GPIO_PinOutClear(WALK_MOTOR_DECAY_PORT, WALK_MOTOR_DECAY_BIT);
-		bWalkReset = 1;
-		bWalkPhase = 0;
-		bWalkDecay = 0;
+    bWalkReset = 1;
+    bWalkPhase = 0;
+    bWalkDecay = 0;
 }
 static void WalkMotor_Down(void)
 {
@@ -114,35 +114,35 @@ static void WalkMotor_Down(void)
     //GPIO_PinOutSet(WALK_MOTOR_RESET_PORT, WALK_MOTOR_RESET_BIT);
     //GPIO_PinOutSet(WALK_MOTOR_PHASE_PORT, WALK_MOTOR_PHASE_BIT);
     //GPIO_PinOutClear(WALK_MOTOR_DECAY_PORT, WALK_MOTOR_DECAY_BIT);
-		bWalkReset = 1;
-		bWalkPhase = 1;
-		bWalkDecay = 0;
+    bWalkReset = 1;
+    bWalkPhase = 1;
+    bWalkDecay = 0;
 }
 static void WalkMotor_Break(void)
 {
     //GPIO_PinOutClear(WALK_MOTOR_DECAY_PORT, WALK_MOTOR_DECAY_BIT);
     // GPIO_PinOutClear(WALK_MOTOR_ENBL_PORT, WALK_MOTOR_ENBL_BIT);
     //WalkMotor_Set_Pwm_Data(0);
-		bWalkDecay = 0;
-		bWalkEnable = 0;
+    bWalkDecay = 0;
+    bWalkEnable = 0;
 }
 /*
 static void WalkMotor_Reset(void)
 {
     //GPIO_PinOutClear(WALK_MOTOR_RESET_PORT, WALK_MOTOR_RESET_BIT);
-		bWalkReset = 0;
+    bWalkReset = 0;
 }
 static void WalkMotor_Reset_Cancel(void)
 {
     //GPIO_PinOutSet(WALK_MOTOR_RESET_PORT, WALK_MOTOR_RESET_BIT);
-		bWalkReset = 1;
+    bWalkReset = 1;
 }
 */
 
 int WalkMotor_Get_Fault(void)
 {
     if(bWalkFault == 1)
-        return WALK_MOTOR_NORMAL;
+    return WALK_MOTOR_NORMAL;
     return WALK_MOTOR_FAIL;
 }
 
@@ -150,8 +150,7 @@ unsigned char WalkMotor_Control(unsigned char nFinalWalkMotorState,unsigned shor
 {
     unsigned char nRetVal;
     _Bool bPowerFlag;
-		unsigned short curPosition;
-		
+    unsigned short curPosition;
     nRetVal = FALSE;
     curPosition = Input_GetWalkMotorPosition();
     nWalkLoss = 0;
