@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V3.10.1.201 for STM8                     10/Dec/2018  09:24:48
+# IAR ELF Linker V3.10.1.201 for STM8                     13/Dec/2018  08:25:45
 # Copyright 2010-2017 IAR Systems AB.
 #
 #    Output file  =  
@@ -8,7 +8,7 @@
 #    Map file     =  
 #        E:\°´Ä¦ÒÎ\RT5780\RT5780Back_RT000_V1.0_20181205\Debug\List\RT5780.map
 #    Command line =  
-#        -f C:\Users\wangqian\AppData\Local\Temp\EW77A6.tmp
+#        -f C:\Users\wangqian\AppData\Local\Temp\EW6D67.tmp
 #        (E:\°´Ä¦ÒÎ\RT5780\RT5780Back_RT000_V1.0_20181205\Debug\Obj\Input.o
 #        E:\°´Ä¦ÒÎ\RT5780\RT5780Back_RT000_V1.0_20181205\Debug\Obj\KneadMotor.o
 #        E:\°´Ä¦ÒÎ\RT5780\RT5780Back_RT000_V1.0_20181205\Debug\Obj\KnockMotor.o
@@ -160,74 +160,101 @@ initialize by copy {
     CSTACK           uninit   0x000300   0x100  <Block tail>
                             - 0x000400   0x100
 
+Absolute sections, part 1 of 6:            0x2
+  .near.noinit       uninit   0x005000     0x1  WalkMotor.o [1]
+  .near.noinit       uninit   0x005001     0x1  Input.o [1]
+                            - 0x005002     0x2
+
+Absolute sections, part 2 of 6:            0x1
+  .near.noinit       uninit   0x005005     0x1  WalkMotor.o [1]
+                            - 0x005006     0x1
+
+Absolute sections, part 3 of 6:            0x2
+  .near.noinit       uninit   0x00500a     0x1  KneadMotor.o [1]
+  .near.noinit       uninit   0x00500b     0x1  KneadMotor.o [1]
+                            - 0x00500c     0x2
+
+Absolute sections, part 4 of 6:            0x2
+  .near.noinit       uninit   0x00500f     0x1  stm8s_interruput.o [1]
+  .near.noinit       uninit   0x005010     0x1  KnockMotor.o [1]
+                            - 0x005011     0x2
+
+Absolute sections, part 5 of 6:            0x1
+  .near.noinit       uninit   0x005014     0x1  WalkMotor.o [1]
+                            - 0x005015     0x1
+
+Absolute sections, part 6 of 6:            0x1
+  .near.noinit       uninit   0x005019     0x1  WalkMotor.o [1]
+                            - 0x00501a     0x1
+
 "A2":                                     0x80
   INTVEC                      0x008000    0x80  <Block>
     .intvec          const    0x008000    0x80  interrupt.o [4]
                             - 0x008080    0x80
 
-"P3-P5":                                0x1508
-  .far_func.text     ro code  0x008080   0x357  RT5800Back.o [1]
-  .far_func.text     ro code  0x0083d7   0x31b  MotorCtrl.o [1]
-  .far_func.text     ro code  0x0086f2   0x2bd  MotorCtrl.o [1]
-  .far_func.text     ro code  0x0089af   0x134  MotorCtrl.o [1]
-  .far_func.text     ro code  0x008ae3   0x100  KneadMotor.o [1]
-  .far_func.text     ro code  0x008be3    0xfb  WalkMotor.o [1]
-  .far_func.text     ro code  0x008cde    0xd0  stm8s_interruput.o [1]
-  .far_func.text     ro code  0x008dae    0xc2  Input.o [1]
-  .far_func.text     ro code  0x008e70    0xb4  KneadMotor.o [1]
-  .far_func.text     ro code  0x008f24    0x96  vreg_util.o [4]
-  .far_func.text     ro code  0x008fba    0x8d  stm8s_interruput.o [1]
-  .far_func.text     ro code  0x009047    0x89  RT5800Back.o [1]
-  .far_func.text     ro code  0x0090d0    0x83  Timer.o [1]
-  .far_func.text     ro code  0x009153    0x62  RT5800Back.o [1]
-  .far_func.text     ro code  0x0091b5    0x56  stm8s_interruput.o [1]
-  .far_func.text     ro code  0x00920b    0x4e  MotorCtrl.o [1]
-  .far_func.text     ro code  0x009259    0x3d  KnockMotor.o [1]
-  .far_func.text     ro code  0x009296    0x37  stm8s_interruput.o [1]
-  .far_func.text     ro code  0x0092cd    0x35  RT5800Back.o [1]
-  .far_func.text     ro code  0x009302    0x29  RT5800Back.o [1]
-  .far_func.text     ro code  0x00932b    0x28  WalkMotor.o [1]
-  .far_func.text     ro code  0x009353    0x28  WalkMotor.o [1]
-  .far_func.text     ro code  0x00937b    0x28  init_small.o [4]
-  .far_func.text     ro code  0x0093a3    0x26  short.o [4]
-  .iar.init_table    const    0x0093c9    0x14  - Linker created -
-  .far_func.text     ro code  0x0093dd    0x1e  init.o [4]
-  .far_func.text     ro code  0x0093fb    0x1e  init_small.o [4]
-  .far_func.text     ro code  0x009419    0x1c  WalkMotor.o [1]
-  .far_func.text     ro code  0x009435    0x1b  WalkMotor.o [1]
-  .far_func.text     ro code  0x009450    0x17  cstartup.o [4]
-  .far_func.text     ro code  0x009467    0x16  __dbg_xxexit.o [3]
-  .far_func.text     ro code  0x00947d    0x15  RT5800Back.o [1]
-  .far_func.text     ro code  0x009492    0x15  RT5800Back.o [1]
-  .far_func.text     ro code  0x0094a7     0xf  KnockMotor.o [1]
-  .far_func.text     ro code  0x0094b6     0xf  WalkMotor.o [1]
-  .far_func.text     ro code  0x0094c5     0xe  KneadMotor.o [1]
-  .far_func.text     ro code  0x0094d3     0xe  KneadMotor.o [1]
-  .far_func.text     ro code  0x0094e1     0xe  KnockMotor.o [1]
-  .far_func.text     ro code  0x0094ef     0xe  KnockMotor.o [1]
-  .far_func.text     ro code  0x0094fd     0xe  WalkMotor.o [1]
-  .far_func.text     ro code  0x00950b     0xe  WalkMotor.o [1]
-  .far_func.text     ro code  0x009519     0xe  far_util.o [4]
-  .far_func.text     ro code  0x009527     0xa  RT5800Back.o [1]
-  .far_func.text     ro code  0x009531     0x9  Timer.o [1]
-  .far_func.text     ro code  0x00953a     0x6  Input.o [1]
-  .far_func.text     ro code  0x009540     0x6  Input.o [1]
-  .far_func.text     ro code  0x009546     0x6  Input.o [1]
-  .far_func.text     ro code  0x00954c     0x6  Input.o [1]
-  .far_func.text     ro code  0x009552     0x6  Input.o [1]
-  .far_func.text     ro code  0x009558     0x6  Input.o [1]
-  .far_func.text     ro code  0x00955e     0x6  cexit.o [4]
-  .far_func.text     ro code  0x009564     0x5  Input.o [1]
-  .far_func.text     ro code  0x009569     0x5  Timer.o [1]
-  .far_func.text     ro code  0x00956e     0x4  Input.o [1]
-  .far_func.text     ro code  0x009572     0x4  Input.o [1]
-  .far_func.text     ro code  0x009576     0x4  interrupt.o [4]
-  .far_func.text     ro code  0x00957a     0x4  exit.o [4]
-  .far_func.text     ro code  0x00957e     0x3  low_level_init.o [4]
-  .far_func.text     ro code  0x009581     0x3  unhandled_exception.o [4]
-  Initializer bytes  const    0x009584     0x3  <for P2-1>
-  .far_func.text     ro code  0x009587     0x1  __dbg_break.o [3]
-                            - 0x009588  0x1508
+"P3-P5":                                0x1418
+  .far_func.text     ro code  0x008080   0x345  RT5800Back.o [1]
+  .far_func.text     ro code  0x0083c5   0x31b  MotorCtrl.o [1]
+  .far_func.text     ro code  0x0086e0   0x2bd  MotorCtrl.o [1]
+  .far_func.text     ro code  0x00899d   0x134  MotorCtrl.o [1]
+  .far_func.text     ro code  0x008ad1    0xfb  WalkMotor.o [1]
+  .far_func.text     ro code  0x008bcc    0xc7  stm8s_interruput.o [1]
+  .far_func.text     ro code  0x008c93    0xc6  Input.o [1]
+  .far_func.text     ro code  0x008d59    0xb4  KneadMotor.o [1]
+  .far_func.text     ro code  0x008e0d    0xb3  KneadMotor.o [1]
+  .far_func.text     ro code  0x008ec0    0x96  vreg_util.o [4]
+  .far_func.text     ro code  0x008f56    0x8d  stm8s_interruput.o [1]
+  .far_func.text     ro code  0x008fe3    0x89  RT5800Back.o [1]
+  .far_func.text     ro code  0x00906c    0x83  Timer.o [1]
+  .far_func.text     ro code  0x0090ef    0x59  RT5800Back.o [1]
+  .far_func.text     ro code  0x009148    0x56  stm8s_interruput.o [1]
+  .far_func.text     ro code  0x00919e    0x4e  MotorCtrl.o [1]
+  .far_func.text     ro code  0x0091ec    0x3d  KnockMotor.o [1]
+  .far_func.text     ro code  0x009229    0x37  stm8s_interruput.o [1]
+  .far_func.text     ro code  0x009260    0x35  RT5800Back.o [1]
+  .far_func.text     ro code  0x009295    0x29  RT5800Back.o [1]
+  .far_func.text     ro code  0x0092be    0x28  init_small.o [4]
+  .far_func.text     ro code  0x0092e6    0x26  short.o [4]
+  .iar.init_table    const    0x00930c    0x14  - Linker created -
+  .far_func.text     ro code  0x009320    0x1e  init.o [4]
+  .far_func.text     ro code  0x00933e    0x1e  init_small.o [4]
+  .far_func.text     ro code  0x00935c    0x17  cstartup.o [4]
+  .far_func.text     ro code  0x009373    0x16  __dbg_xxexit.o [3]
+  .far_func.text     ro code  0x009389    0x15  RT5800Back.o [1]
+  .far_func.text     ro code  0x00939e    0x15  RT5800Back.o [1]
+  .far_func.text     ro code  0x0093b3    0x13  WalkMotor.o [1]
+  .far_func.text     ro code  0x0093c6    0x11  KnockMotor.o [1]
+  .far_func.text     ro code  0x0093d7    0x11  WalkMotor.o [1]
+  .far_func.text     ro code  0x0093e8     0xe  far_util.o [4]
+  .far_func.text     ro code  0x0093f6     0xd  WalkMotor.o [1]
+  .far_func.text     ro code  0x009403     0xd  WalkMotor.o [1]
+  .far_func.text     ro code  0x009410     0xa  RT5800Back.o [1]
+  .far_func.text     ro code  0x00941a     0x9  Timer.o [1]
+  .far_func.text     ro code  0x009423     0x9  WalkMotor.o [1]
+  .far_func.text     ro code  0x00942c     0x6  Input.o [1]
+  .far_func.text     ro code  0x009432     0x6  Input.o [1]
+  .far_func.text     ro code  0x009438     0x6  Input.o [1]
+  .far_func.text     ro code  0x00943e     0x6  Input.o [1]
+  .far_func.text     ro code  0x009444     0x6  Input.o [1]
+  .far_func.text     ro code  0x00944a     0x6  Input.o [1]
+  .far_func.text     ro code  0x009450     0x6  cexit.o [4]
+  .far_func.text     ro code  0x009456     0x5  Input.o [1]
+  .far_func.text     ro code  0x00945b     0x5  KneadMotor.o [1]
+  .far_func.text     ro code  0x009460     0x5  KneadMotor.o [1]
+  .far_func.text     ro code  0x009465     0x5  KnockMotor.o [1]
+  .far_func.text     ro code  0x00946a     0x5  KnockMotor.o [1]
+  .far_func.text     ro code  0x00946f     0x5  Timer.o [1]
+  .far_func.text     ro code  0x009474     0x5  WalkMotor.o [1]
+  .far_func.text     ro code  0x009479     0x5  WalkMotor.o [1]
+  .far_func.text     ro code  0x00947e     0x4  Input.o [1]
+  .far_func.text     ro code  0x009482     0x4  Input.o [1]
+  .far_func.text     ro code  0x009486     0x4  interrupt.o [4]
+  .far_func.text     ro code  0x00948a     0x4  exit.o [4]
+  .far_func.text     ro code  0x00948e     0x3  low_level_init.o [4]
+  .far_func.text     ro code  0x009491     0x3  unhandled_exception.o [4]
+  Initializer bytes  const    0x009494     0x3  <for P2-1>
+  .far_func.text     ro code  0x009497     0x1  __dbg_break.o [3]
+                            - 0x009498  0x1418
 
 
 *******************************************************************************
@@ -242,7 +269,7 @@ Zero (__iar_zero_init2)
 
 Copy (__iar_copy_init2)
     1 source range, total size 0x3:
-          0x009584   0x3
+          0x009494   0x3
     1 destination range, total size 0x3:
           0x000010   0x3
 
@@ -252,28 +279,29 @@ Copy (__iar_copy_init2)
 *** MODULE SUMMARY
 ***
 
-    Module                 ro code  ro data  rw data
-    ------                 -------  -------  -------
+    Module                 ro code  ro data  rw data  rw data
+                                                       (abs)
+    ------                 -------  -------  -------  -------
 E:\°´Ä¦ÒÎ\RT5780\RT5780Back_RT000_V1.0_20181205\Debug\Obj: [1]
-    Input.o                    243                13
-    KneadMotor.o               464                 7
-    KnockMotor.o               104
+    Input.o                    247                13        1
+    KneadMotor.o               369                 7        2
+    KnockMotor.o                88                          1
     MotorCtrl.o              1 882        2       20
-    RT5800Back.o             1 236        1       62
+    RT5800Back.o             1 209        1       62
     Timer.o                    145                17
-    WalkMotor.o                429                 1
-    stm8s_interruput.o         490                11
-    ------------------------------------------------
-    Total:                   4 993        3      131
+    WalkMotor.o                332                 1        4
+    stm8s_interruput.o         481                11        1
+    ---------------------------------------------------------
+    Total:                   4 753        3      131        9
 
 command line: [2]
-    ------------------------------------------------
+    ---------------------------------------------------------
     Total:
 
 dbgstm8mmd.a: [3]
     __dbg_break.o                1
     __dbg_xxexit.o              22
-    ------------------------------------------------
+    ---------------------------------------------------------
     Total:                      23
 
 dlstm8mmn.a: [4]
@@ -289,12 +317,12 @@ dlstm8mmn.a: [4]
     unhandled_exception.o        3
     vreg_util.o                150
     vregs.o                                       16
-    ------------------------------------------------
+    ---------------------------------------------------------
     Total:                     345      128       16
 
     Linker created                       20      256
-----------------------------------------------------
-    Grand Total:             5 361      151      403
+-------------------------------------------------------------
+    Grand Total:             5 121      151      403        9
 
 
 *******************************************************************************
@@ -303,8 +331,8 @@ dlstm8mmn.a: [4]
 
 Entry                    Address   Size  Type      Object
 -----                    -------   ----  ----      ------
-.iar.init_table$$Base   0x0093c9          --   Gb  - Linker created -
-.iar.init_table$$Limit  0x0093dd          --   Gb  - Linker created -
+.iar.init_table$$Base   0x00930c          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x009320          --   Gb  - Linker created -
 ?b0                     0x000000         Data  Gb  vregs.o [4]
 ?b1                     0x000001         Data  Gb  vregs.o [4]
 ?b10                    0x00000a         Data  Gb  vregs.o [4]
@@ -325,23 +353,23 @@ Entry                    Address   Size  Type      Object
 ?e1                     0x000005         Data  Gb  vregs.o [4]
 ?e2                     0x000009         Data  Gb  vregs.o [4]
 ?e3                     0x00000d         Data  Gb  vregs.o [4]
-?epilogue_l2            0x008fb0         Code  Gb  vreg_util.o [4]
-?epilogue_w4            0x008fb5         Code  Gb  vreg_util.o [4]
+?epilogue_l2            0x008f4c         Code  Gb  vreg_util.o [4]
+?epilogue_w4            0x008f51         Code  Gb  vreg_util.o [4]
 ?l0                     0x000000         Data  Gb  vregs.o [4]
 ?l1                     0x000004         Data  Gb  vregs.o [4]
 ?l2                     0x000008         Data  Gb  vregs.o [4]
 ?l3                     0x00000c         Data  Gb  vregs.o [4]
-?load24_e1_0x           0x009519         Code  Gb  far_util.o [4]
-?mul16_x_x_w0           0x0093a3         Code  Gb  short.o [4]
-?pop_l0                 0x008f83         Code  Gb  vreg_util.o [4]
-?pop_l1                 0x008f8e         Code  Gb  vreg_util.o [4]
-?pop_l2                 0x008f99         Code  Gb  vreg_util.o [4]
-?pop_w4                 0x008f40         Code  Gb  vreg_util.o [4]
-?push_l0                0x008f53         Code  Gb  vreg_util.o [4]
-?push_l1                0x008f58         Code  Gb  vreg_util.o [4]
-?push_l2                0x008f5d         Code  Gb  vreg_util.o [4]
-?push_w4                0x008f24         Code  Gb  vreg_util.o [4]
-?sll16_x_x_a            0x0093c1         Code  Gb  short.o [4]
+?load24_e1_0x           0x0093e8         Code  Gb  far_util.o [4]
+?mul16_x_x_w0           0x0092e6         Code  Gb  short.o [4]
+?pop_l0                 0x008f1f         Code  Gb  vreg_util.o [4]
+?pop_l1                 0x008f2a         Code  Gb  vreg_util.o [4]
+?pop_l2                 0x008f35         Code  Gb  vreg_util.o [4]
+?pop_w4                 0x008edc         Code  Gb  vreg_util.o [4]
+?push_l0                0x008eef         Code  Gb  vreg_util.o [4]
+?push_l1                0x008ef4         Code  Gb  vreg_util.o [4]
+?push_l2                0x008ef9         Code  Gb  vreg_util.o [4]
+?push_w4                0x008ec0         Code  Gb  vreg_util.o [4]
+?sll16_x_x_a            0x009304         Code  Gb  short.o [4]
 ?w0                     0x000000         Data  Gb  vregs.o [4]
 ?w1                     0x000002         Data  Gb  vregs.o [4]
 ?w2                     0x000004         Data  Gb  vregs.o [4]
@@ -350,58 +378,58 @@ Entry                    Address   Size  Type      Object
 ?w5                     0x00000a         Data  Gb  vregs.o [4]
 ?w6                     0x00000c         Data  Gb  vregs.o [4]
 ?w7                     0x00000e         Data  Gb  vregs.o [4]
-CLK_Init                0x009527    0xa  Code  Gb  RT5800Back.o [1]
+CLK_Init                0x009410    0xa  Code  Gb  RT5800Back.o [1]
 CSTACK$$Base            0x000300          --   Gb  - Linker created -
 CSTACK$$Limit           0x000400          --   Gb  - Linker created -
-CommProcess             0x008080  0x357  Code  Gb  RT5800Back.o [1]
-EXTI1_PORTB_Interrupt   0x0091b5   0x56  Code  Gb  stm8s_interruput.o [1]
-GPIO_Init               0x009047   0x89  Code  Gb  RT5800Back.o [1]
+CommProcess             0x008080  0x345  Code  Gb  RT5800Back.o [1]
+EXTI1_PORTB_Interrupt   0x009148   0x56  Code  Gb  stm8s_interruput.o [1]
+GPIO_Init               0x008fe3   0x89  Code  Gb  RT5800Back.o [1]
 INTVEC$$Base            0x008000          --   Gb  - Linker created -
 INTVEC$$Limit           0x008080          --   Gb  - Linker created -
-Input_5ms_Int           0x009564    0x5  Code  Gb  Input.o [1]
-Input_GetKneadMax       0x00953a    0x6  Code  Gb  Input.o [1]
-Input_GetKneadMid       0x009540    0x6  Code  Gb  Input.o [1]
-Input_GetKneadMin       0x009546    0x6  Code  Gb  Input.o [1]
-Input_GetKneadPosition  0x00954c    0x6  Code  Gb  Input.o [1]
+Input_5ms_Int           0x009456    0x5  Code  Gb  Input.o [1]
+Input_GetKneadMax       0x00942c    0x6  Code  Gb  Input.o [1]
+Input_GetKneadMid       0x009432    0x6  Code  Gb  Input.o [1]
+Input_GetKneadMin       0x009438    0x6  Code  Gb  Input.o [1]
+Input_GetKneadPosition  0x00943e    0x6  Code  Gb  Input.o [1]
 Input_GetWalkDownSwitch
-                        0x009558    0x6  Code  Gb  Input.o [1]
+                        0x00944a    0x6  Code  Gb  Input.o [1]
 Input_GetWalkMotorPosition
-                        0x009572    0x4  Code  Gb  Input.o [1]
-Input_GetWalkUpSwitch   0x009552    0x6  Code  Gb  Input.o [1]
-Input_High              0x008dae   0x1a  Code  Gb  Input.o [1]
-Input_Low               0x008dc8   0x1a  Code  Gb  Input.o [1]
-Input_Proce             0x008de2   0x8e  Code  Gb  Input.o [1]
+                        0x009482    0x4  Code  Gb  Input.o [1]
+Input_GetWalkUpSwitch   0x009444    0x6  Code  Gb  Input.o [1]
+Input_High              0x008c93   0x1a  Code  Gb  Input.o [1]
+Input_Low               0x008cad   0x1a  Code  Gb  Input.o [1]
+Input_Proce             0x008cc7   0x92  Code  Gb  Input.o [1]
 Input_SetWalkMotorPosition
-                        0x00956e    0x4  Code  Gb  Input.o [1]
-KneadMotorControl       0x0083d7  0x31b  Code  Gb  MotorCtrl.o [1]
+                        0x00947e    0x4  Code  Gb  Input.o [1]
+KneadMotorControl       0x0083c5  0x31b  Code  Gb  MotorCtrl.o [1]
 KneadMotorControl::nCurKneadWidth
                         0x000077    0x1  Data  Lc  MotorCtrl.o [1]
 KneadMotorControl::nFinalKneadMotorState
                         0x000076    0x1  Data  Lc  MotorCtrl.o [1]
-KneadMotor_10ms_Int     0x008b21   0x1e  Code  Gb  KneadMotor.o [1]
-KneadMotor_Break        0x008b8f   0x45  Code  Gb  KneadMotor.o [1]
-KneadMotor_ClockRun     0x008b3f   0x28  Code  Gb  KneadMotor.o [1]
-KneadMotor_Control      0x008e70   0xb4  Code  Gb  KneadMotor.o [1]
-KneadMotor_Get_Fault    0x008bd4    0xf  Code  Gb  KneadMotor.o [1]
-KneadMotor_Reset        0x0094c5    0xe  Code  Gb  KneadMotor.o [1]
+KneadMotor_10ms_Int     0x008e4b   0x1e  Code  Gb  KneadMotor.o [1]
+KneadMotor_Break        0x008e83   0x33  Code  Gb  KneadMotor.o [1]
+KneadMotor_ClockRun     0x008e69    0xd  Code  Gb  KneadMotor.o [1]
+KneadMotor_Control      0x008d59   0xb4  Code  Gb  KneadMotor.o [1]
+KneadMotor_Get_Fault    0x008eb6    0xa  Code  Gb  KneadMotor.o [1]
+KneadMotor_Reset        0x00945b    0x5  Code  Gb  KneadMotor.o [1]
 KneadMotor_Reset_Cancel
-                        0x0094d3    0xe  Code  Gb  KneadMotor.o [1]
+                        0x009460    0x5  Code  Gb  KneadMotor.o [1]
 KneadMotor_Set_Pwm_Data
-                        0x008ae3   0x3e  Code  Lc  KneadMotor.o [1]
-KneadMotor_UnClockRun   0x008b67   0x28  Code  Gb  KneadMotor.o [1]
-KnockMotorControl       0x0089af  0x134  Code  Gb  MotorCtrl.o [1]
+                        0x008e0d   0x3e  Code  Lc  KneadMotor.o [1]
+KneadMotor_UnClockRun   0x008e76    0xd  Code  Gb  KneadMotor.o [1]
+KnockMotorControl       0x00899d  0x134  Code  Gb  MotorCtrl.o [1]
 KnockMotorControl::bKnockMotorPowerFlag
                         0x000074    0x1  Data  Lc  MotorCtrl.o [1]
-KnockMotor_Break        0x009291    0x5  Code  Gb  KnockMotor.o [1]
-KnockMotor_DisEnbl      0x0094ef    0xe  Code  Gb  KnockMotor.o [1]
-KnockMotor_Enbl         0x0094e1    0xe  Code  Gb  KnockMotor.o [1]
-KnockMotor_Get_Fault    0x0094a7    0xf  Code  Gb  KnockMotor.o [1]
+KnockMotor_Break        0x009224    0x5  Code  Gb  KnockMotor.o [1]
+KnockMotor_DisEnbl      0x00946a    0x5  Code  Gb  KnockMotor.o [1]
+KnockMotor_Enbl         0x009465    0x5  Code  Gb  KnockMotor.o [1]
+KnockMotor_Get_Fault    0x0093c6   0x11  Code  Gb  KnockMotor.o [1]
 KnockMotor_Set_Pwm_Data
-                        0x009259   0x38  Code  Gb  KnockMotor.o [1]
+                        0x0091ec   0x38  Code  Gb  KnockMotor.o [1]
 RX_Index                0x00005e    0x2  Data  Gb  stm8s_interruput.o [1]
-Region$$Table$$Base     0x0093c9          --   Gb  - Linker created -
-Region$$Table$$Limit    0x0093dd          --   Gb  - Linker created -
-TIM4_Interrupt          0x008cde   0xd0  Code  Gb  stm8s_interruput.o [1]
+Region$$Table$$Base     0x00930c          --   Gb  - Linker created -
+Region$$Table$$Limit    0x009320          --   Gb  - Linker created -
+TIM4_Interrupt          0x008bcc   0xc7  Code  Gb  stm8s_interruput.o [1]
 TIM4_Interrupt::b485SendCounter
                         0x00008f    0x1  Data  Lc  stm8s_interruput.o [1]
 TIM4_Interrupt::bSendFinishCounter
@@ -412,41 +440,50 @@ TIM4_Interrupt::by_Time10ms
                         0x00008d    0x1  Data  Lc  stm8s_interruput.o [1]
 TIM4_Interrupt::by_Time5ms
                         0x00008c    0x1  Data  Lc  stm8s_interruput.o [1]
-TIM_Init                0x00947d   0x15  Code  Gb  RT5800Back.o [1]
-Time1Pwm_Init           0x0092cd   0x35  Code  Gb  RT5800Back.o [1]
-Time2Pwm_Init           0x009302   0x29  Code  Gb  RT5800Back.o [1]
-Timer_Counter           0x0090d0   0x83  Code  Gb  Timer.o [1]
-Timer_Counter_Clear     0x009531    0x9  Code  Gb  Timer.o [1]
-Timer_Flag_100ms_Int    0x009569    0x5  Code  Gb  Timer.o [1]
-UART_Init               0x009492   0x15  Code  Gb  RT5800Back.o [1]
-UART_RX_Interrupt       0x008fba   0x8d  Code  Gb  stm8s_interruput.o [1]
-UART_TX_Interrupt       0x009296   0x37  Code  Gb  stm8s_interruput.o [1]
-WalkMotorControl        0x0086f2  0x2bd  Code  Gb  MotorCtrl.o [1]
+TIM_Init                0x009389   0x15  Code  Gb  RT5800Back.o [1]
+Time1Pwm_Init           0x009260   0x35  Code  Gb  RT5800Back.o [1]
+Time2Pwm_Init           0x009295   0x29  Code  Gb  RT5800Back.o [1]
+Timer_Counter           0x00906c   0x83  Code  Gb  Timer.o [1]
+Timer_Counter_Clear     0x00941a    0x9  Code  Gb  Timer.o [1]
+Timer_Flag_100ms_Int    0x00946f    0x5  Code  Gb  Timer.o [1]
+UART_Init               0x00939e   0x15  Code  Gb  RT5800Back.o [1]
+UART_RX_Interrupt       0x008f56   0x8d  Code  Gb  stm8s_interruput.o [1]
+UART_TX_Interrupt       0x009229   0x37  Code  Gb  stm8s_interruput.o [1]
+WalkMotorControl        0x0086e0  0x2bd  Code  Gb  MotorCtrl.o [1]
 WalkMotorControl::nFinalWalkMotorLocate
                         0x000010    0x2  Data  Lc  MotorCtrl.o [1]
-WalkMotor_10ms_Int      0x009419   0x1c  Code  Gb  WalkMotor.o [1]
-WalkMotor_Break         0x009435   0x1b  Code  Lc  WalkMotor.o [1]
-WalkMotor_Control       0x008be3   0xfb  Code  Gb  WalkMotor.o [1]
-WalkMotor_Down          0x009353   0x28  Code  Lc  WalkMotor.o [1]
-WalkMotor_GetDirection  0x0094b6    0xf  Code  Gb  WalkMotor.o [1]
-WalkMotor_Up            0x00932b   0x28  Code  Lc  WalkMotor.o [1]
-WalkPower_Off           0x00950b    0xe  Code  Lc  WalkMotor.o [1]
-WalkPower_On            0x0094fd    0xe  Code  Lc  WalkMotor.o [1]
-__DebugBreak            0x009587    0x1  Code  Gb  __dbg_break.o [3]
-__exit                  0x009467   0x16  Code  Gb  __dbg_xxexit.o [3]
-__iar_copy_init2        0x00937b         Code  Gb  init_small.o [4]
-__iar_data_init2        0x0093dd   0x1e  Code  Gb  init.o [4]
-__iar_program_start     0x009450         Code  Gb  cstartup.o [4]
+WalkMotor_10ms_Int      0x0093b3   0x13  Code  Gb  WalkMotor.o [1]
+WalkMotor_Break         0x009423    0x9  Code  Lc  WalkMotor.o [1]
+WalkMotor_Control       0x008ad1   0xfb  Code  Gb  WalkMotor.o [1]
+WalkMotor_Down          0x009403    0xd  Code  Lc  WalkMotor.o [1]
+WalkMotor_GetDirection  0x0093d7   0x11  Code  Gb  WalkMotor.o [1]
+WalkMotor_Up            0x0093f6    0xd  Code  Lc  WalkMotor.o [1]
+WalkPower_Off           0x009479    0x5  Code  Lc  WalkMotor.o [1]
+WalkPower_On            0x009474    0x5  Code  Lc  WalkMotor.o [1]
+_A_PA_IDR               0x005001    0x1  Data  Gb  Input.o [1]
+_A_PA_ODR               0x005000    0x1  Data  Gb  WalkMotor.o [1]
+_A_PB_ODR               0x005005    0x1  Data  Gb  WalkMotor.o [1]
+_A_PC_IDR               0x00500b    0x1  Data  Gb  KneadMotor.o [1]
+_A_PC_ODR               0x00500a    0x1  Data  Gb  KneadMotor.o [1]
+_A_PD_IDR               0x005010    0x1  Data  Gb  KnockMotor.o [1]
+_A_PD_ODR               0x00500f    0x1  Data  Gb  stm8s_interruput.o [1]
+_A_PE_ODR               0x005014    0x1  Data  Gb  WalkMotor.o [1]
+_A_PF_ODR               0x005019    0x1  Data  Gb  WalkMotor.o [1]
+__DebugBreak            0x009497    0x1  Code  Gb  __dbg_break.o [3]
+__exit                  0x009373   0x16  Code  Gb  __dbg_xxexit.o [3]
+__iar_copy_init2        0x0092be         Code  Gb  init_small.o [4]
+__iar_data_init2        0x009320   0x1e  Code  Gb  init.o [4]
+__iar_program_start     0x00935c         Code  Gb  cstartup.o [4]
 __iar_unhandled_exception
-                        0x009581         Code  Gb  unhandled_exception.o [4]
-__iar_zero_init2        0x0093fb         Code  Gb  init_small.o [4]
+                        0x009491         Code  Gb  unhandled_exception.o [4]
+__iar_zero_init2        0x00933e         Code  Gb  init_small.o [4]
 __intvec                0x008000         Data  Gb  interrupt.o [4]
-__low_level_init        0x00957e    0x3  Code  Gb  low_level_init.o [4]
-_exit                   0x00955e         Code  Gb  cexit.o [4]
-_interrupt_17           0x009296         Code  Gb  stm8s_interruput.o [1]
-_interrupt_18           0x008fba         Code  Gb  stm8s_interruput.o [1]
-_interrupt_23           0x008cde         Code  Gb  stm8s_interruput.o [1]
-_interrupt_4            0x0091b5         Code  Gb  stm8s_interruput.o [1]
+__low_level_init        0x00948e    0x3  Code  Gb  low_level_init.o [4]
+_exit                   0x009450         Code  Gb  cexit.o [4]
+_interrupt_19           0x009229         Code  Gb  stm8s_interruput.o [1]
+_interrupt_20           0x008f56         Code  Gb  stm8s_interruput.o [1]
+_interrupt_25           0x008bcc         Code  Gb  stm8s_interruput.o [1]
+_interrupt_6            0x009148         Code  Gb  stm8s_interruput.o [1]
 b485SendFlag            0x000086    0x1  Data  Gb  RT5800Back.o [1]
 b5msFlag                0x000062    0x1  Data  Lc  Input.o [1]
 bHasKneadWidthMaxPulse  0x000073    0x1  Data  Gb  MotorCtrl.o [1]
@@ -464,10 +501,10 @@ bUpdateLocate           0x000070    0x1  Data  Gb  MotorCtrl.o [1]
 bWalkMotorInProcess     0x00006e    0x1  Data  Gb  MotorCtrl.o [1]
 by_KneadPosition        0x000066    0x1  Data  Lc  Input.o [1]
 by_Timer_Flag           0x000091    0x1  Data  Lc  Timer.o [1]
-exit                    0x00957a    0x4  Code  Gb  exit.o [4]
+exit                    0x00948a    0x4  Code  Gb  exit.o [4]
 kneadCounter            0x000056    0x2  Data  Lc  KneadMotor.o [1]
-main                    0x009153   0x62  Code  Gb  RT5800Back.o [1]
-main_GetKneadPosition   0x00920b   0x4e  Code  Gb  MotorCtrl.o [1]
+main                    0x0090ef   0x59  Code  Gb  RT5800Back.o [1]
+main_GetKneadPosition   0x00919e   0x4e  Code  Gb  MotorCtrl.o [1]
 main_GetKneadPosition::nLastKneadPosition
                         0x000075    0x1  Data  Lc  MotorCtrl.o [1]
 motorBreakTime          0x000054    0x2  Data  Lc  KneadMotor.o [1]
@@ -526,9 +563,9 @@ w_Timer_Data            0x00002c   0x10  Data  Lc  Timer.o [1]
 [3] = dbgstm8mmd.a
 [4] = dlstm8mmn.a
 
-  5 361 bytes of readonly  code memory
+  5 121 bytes of readonly  code memory
     151 bytes of readonly  data memory
-    403 bytes of readwrite data memory
+    403 bytes of readwrite data memory (+ 9 absolute)
 
 Errors: none
 Warnings: none

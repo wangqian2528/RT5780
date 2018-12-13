@@ -5,35 +5,66 @@
 #ifndef __STM8S103K__
 #define __STM8S103K__
 
+#define __READ_WRITE        /*可读写*/
+#define __READ     const    /*只读*/
+#define __IO_REG8_BIT(NAME, ADDRESS, ATTRIBUTE, BIT_STRUCT)         \
+                        __near __no_init volatile ATTRIBUTE union   \
+                            {                                       \
+                                unsigned char NAME;                 \
+                                BIT_STRUCT NAME ## _bit;            \
+                            } @ADDRESS;
 
 typedef struct
 {
-    unsigned BIT0:1;
-    unsigned BIT1:1;
-    unsigned BIT2:1;
-    unsigned BIT3:1;
-    unsigned BIT4:1;
-    unsigned BIT5:1;
-    unsigned BIT6:1;
-    unsigned BIT7:1;
-}ST_BITS;
+    unsigned char ODR0        : 1;
+    unsigned char ODR1        : 1;
+    unsigned char ODR2        : 1;
+    unsigned char ODR3        : 1;
+    unsigned char ODR4        : 1;
+    unsigned char ODR5        : 1;
+    unsigned char ODR6        : 1;
+    unsigned char ODR7        : 1;
+} __BITS_ODR;
 
 typedef struct
 {
-	ST_BITS ODR;
-	ST_BITS IDR;
-	ST_BITS DDR;
-	ST_BITS CR1;
-	ST_BITS CR2;
-}GPIO;
+    unsigned char IDR0        : 1;
+    unsigned char IDR1        : 1;
+    unsigned char IDR2        : 1;
+    unsigned char IDR3        : 1;
+    unsigned char IDR4        : 1;
+    unsigned char IDR5        : 1;
+    unsigned char IDR6        : 1;
+    unsigned char IDR7        : 1;
+} __BITS_IDR;
 
-#define PA      (*(volatile GPIO*)0x5000)
-#define PB      (*(volatile GPIO*)0x5005)
-#define PC      (*(volatile GPIO*)0x500a)
-#define PD      (*(volatile GPIO*)0x500f)
-#define PE      (*(volatile GPIO*)0x5014)
-#define PF      (*(volatile GPIO*)0x5019)
+__IO_REG8_BIT(PA_ODR,      0x5000, __READ_WRITE, __BITS_ODR);   //PA输出口 
+__IO_REG8_BIT(PB_ODR,      0x5005, __READ_WRITE, __BITS_ODR);   //PB输出口 
+__IO_REG8_BIT(PC_ODR,      0x500A, __READ_WRITE, __BITS_ODR);   //PC输出口 
+__IO_REG8_BIT(PD_ODR,      0x500F, __READ_WRITE, __BITS_ODR);   //PD输出口 
+__IO_REG8_BIT(PE_ODR,      0x5014, __READ_WRITE, __BITS_ODR);   //PE输出口 
+__IO_REG8_BIT(PF_ODR,      0x5019, __READ_WRITE, __BITS_ODR);   //PF输出口 
 
+__IO_REG8_BIT(PA_IDR,      0x5001, __READ, __BITS_IDR); //PA输入口 
+__IO_REG8_BIT(PB_IDR,      0x5006, __READ, __BITS_IDR); //PB输入口 
+__IO_REG8_BIT(PC_IDR,      0x500B, __READ, __BITS_IDR); //PC输入口 
+__IO_REG8_BIT(PD_IDR,      0x5010, __READ, __BITS_IDR); //PD输入口 
+__IO_REG8_BIT(PE_IDR,      0x5015, __READ, __BITS_IDR); //PE输入口 
+__IO_REG8_BIT(PF_IDR,      0x501A, __READ, __BITS_IDR); //PF输入口 
+
+#define PAout(n) PA_ODR_bit.ODR##n
+#define PBout(n) PB_ODR_bit.ODR##n
+#define PCout(n) PC_ODR_bit.ODR##n
+#define PDout(n) PD_ODR_bit.ODR##n
+#define PEout(n) PE_ODR_bit.ODR##n
+#define PFout(n) PF_ODR_bit.ODR##n
+
+#define PAin(n)  PA_IDR_bit.IDR##n
+#define PBin(n)  PB_IDR_bit.IDR##n
+#define PCin(n)  PC_IDR_bit.IDR##n
+#define PDin(n)  PD_IDR_bit.IDR##n
+#define PEin(n)  PE_IDR_bit.IDR##n
+#define PFin(n)  PF_IDR_bit.IDR##n
 
 #define TRUE      1
 #define FALSE     0
@@ -46,27 +77,27 @@ typedef struct
 #define MAX_SEND_COUNT			14
 #define MAX_RECEIVE_COUNT		25
 
-#define bMax485De       PD.ODR.BIT7
+#define bMax485De       PDout(7)
 
-#define bWalkEnable     PA.ODR.BIT3
-#define bWalkReset      PE.ODR.BIT5
-#define bWalkPhase      PF.ODR.BIT4
-#define bWalkDecay      PB.ODR.BIT7	
-#define bWalkFault      PB.IDR.BIT6
+#define bWalkEnable     PAout(3)
+#define bWalkReset      PEout(5)
+#define bWalkPhase      PFout(4)
+#define bWalkDecay      PBout(7)
+#define bWalkFault      PBin(6)
 
-#define bKneadReset     PD.ODR.BIT0
-#define bKneadPhase     PC.ODR.BIT5
-#define bKneadDecay     PC.ODR.BIT6	
-#define bKneadFault     PC.IDR.BIT7
+#define bKneadReset     PDout(0)
+#define bKneadPhase     PCout(5)
+#define bKneadDecay     PCout(6)
+#define bKneadFault     PCin(7)
 
-#define bKnockReset     PD.ODR.BIT2
-#define bKnockFault     PD.IDR.BIT3
+#define bKnockReset     PDout(2)
+#define bKnockFault     PDin(3)
 
-#define bKneadMaxBit    PC.IDR.BIT3
-#define bKneadMedBit    PC.IDR.BIT2
-#define bKneadMinBit    PC.IDR.BIT1
-#define bWalkUpSW       PA.IDR.BIT2
-#define bWalkDownSW     PA.IDR.BIT1
+#define bKneadMaxBit    PCin(3)
+#define bKneadMedBit    PCin(2)
+#define bKneadMinBit    PCin(1)
+#define bWalkUpSW       PAin(2)
+#define bWalkDownSW     PAin(1)
 
 
 

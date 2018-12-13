@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"D:\Program Files\IAR For STM8\common\bin\cspybat" -f "E:\°´Ä¦ÒÎ\RT5780\RT5780Back_RT000_V1.0_20181205\settings\RT5780.Debug.general.xcl" --backend -f "E:\°´Ä¦ÒÎ\RT5780\RT5780Back_RT000_V1.0_20181205\settings\RT5780.Debug.driver.xcl" 
+"D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "E:\æŒ‰æ‘©æ¤…\RT5780\RT5780Back_RT000_V1.0_20181205\settings\RT5780.Debug.general.xcl" --backend -f "E:\æŒ‰æ‘©æ¤…\RT5780\RT5780Back_RT000_V1.0_20181205\settings\RT5780.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"D:\Program Files\IAR For STM8\common\bin\cspybat" -f "E:\°´Ä¦ÒÎ\RT5780\RT5780Back_RT000_V1.0_20181205\settings\RT5780.Debug.general.xcl" "--debug_file=%~1" --backend -f "E:\°´Ä¦ÒÎ\RT5780\RT5780Back_RT000_V1.0_20181205\settings\RT5780.Debug.driver.xcl" 
+"D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "E:\æŒ‰æ‘©æ¤…\RT5780\RT5780Back_RT000_V1.0_20181205\settings\RT5780.Debug.general.xcl" "--debug_file=%~1" --backend -f "E:\æŒ‰æ‘©æ¤…\RT5780\RT5780Back_RT000_V1.0_20181205\settings\RT5780.Debug.driver.xcl" 
 
 @echo off 
 :end
